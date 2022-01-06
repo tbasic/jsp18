@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import customer.controller.notice.NoticeController;
+import customer.controller.notice.NoticeDetailController;
 
 public class MyDispatcher extends HttpServlet{
 	
@@ -29,6 +30,8 @@ public class MyDispatcher extends HttpServlet{
 		try {
 			if (com.equals("/customer/notice.do")) {
 				controller=new NoticeController();
+			}else if (com.equals("/customer/noticeDetail.do")) {
+				controller=new NoticeDetailController();
 			}
 			
 			controller.execute(request,response);
