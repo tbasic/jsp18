@@ -26,7 +26,6 @@ public class MyDispatcher extends HttpServlet{
 		
 		Controller controller=null;
 		// 인터페이스 타입으로 통일시킴 (Controller 타입)
-		//Controller에서 데이터처리
 		try {
 			if (com.equals("/customer/notice.do")) {
 				controller=new NoticeController();
