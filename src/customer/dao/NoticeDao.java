@@ -10,17 +10,17 @@ import customer.vo.Notice;
 public class NoticeDao {
 	
 	// 테이블의 모든 행(동그랑땡)을 가져오기 위해 list사용
-	public List<Notice> noticeSelAll(String field,String query) throws Exception{
+	public List<Notice> noticeSelAll() throws Exception{
 		
 		// DB접속, 결과 조회
 		Connection con=DBCon.getConnection();
-		// String sql="SELECT * FROM notices ORDER BY to_number(seq) DESC";
-		String sql="SELECT * FROM notices WHERE "+field+" like ? ORDER BY to_number(seq) DESC";
+		String sql="SELECT * FROM notices ORDER BY to_number(seq) DESC";
+		//String sql="SELECT * FROM notices WHERE "+field+" like ? ORDER BY to_number(seq) DESC";
 		
 		// 실행
 		// Statement st=con.createStatement();
 		PreparedStatement pstmt=con.prepareStatement(sql);
-		pstmt.setString(1, "%"+query+"%");
+		
 		
 		// 결과
 		// ResultSet rs=st.executeQuery(sql); // sql의 결과값을 ResultSet에 담는다
